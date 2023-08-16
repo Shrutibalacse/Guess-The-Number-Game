@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number Game</title>
+</head>
+<body>
+    <script>
+        // simple number guessing game.
+        
+        let min = 1;
+        let max = 100;
+        let score = 100;
+
+        let ran_num = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        let i_num;
+        while (true) {
+            i_num = Number.parseInt(prompt("Guess a number between 1 and 100"));
+            console.log("Number you guessed is: " + i_num);
+            score--;
+
+            if (ran_num == i_num) {
+                alert("Congrats!! You got it right.\nYour Score is: " + score);
+                break;
+
+            } 
+            else if (ran_num > i_num) {
+                alert("Oops!! The number is greater than this.\nTry again!");
+                score = score - 1;
+            }
+            else {
+                alert("Oops!! The number is smaller than this.\nTry again!");
+                score = score - 1;
+            }
+        }
+    </script>
+</body>
+</html>
